@@ -37,9 +37,6 @@ def search_transactions(user_id: str, question: str, limit: int = 5) -> list[dic
 
     # print("Search results:", results)
     return [
-        {
-            "payload": result.payload,
-            "score": result.score
-        }
+        result.payload.get("text", "")
         for result in results.points
     ]
