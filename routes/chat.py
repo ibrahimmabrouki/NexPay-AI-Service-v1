@@ -10,4 +10,8 @@ router = APIRouter()
 def chat(request: ChatRequest) -> ChatResponse:
     answer = rag_pipeline(user_id=request.user_id, question=request.question,
                           history=request.history, summary=request.summary)
-    return ChatResponse(answer=answer)
+    print(f"Question: {request.question}")
+    print(f"Answer: {answer}")
+    return ChatResponse(
+        question=request.question,
+        answer=answer)

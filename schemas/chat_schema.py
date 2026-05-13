@@ -9,4 +9,5 @@ class ChatRequest(BaseModel):
     summary: str = ""
 
 class ChatResponse(BaseModel):
+    question: str
     answer: str
